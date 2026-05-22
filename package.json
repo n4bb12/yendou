@@ -7,7 +7,7 @@
     "build": "tsc -b && vite build",
     "dev": "vite",
     "fix": "bun format && bun typecheck",
-    "format": "biome format --write",
+    "format": "biome check --write --unsafe",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
