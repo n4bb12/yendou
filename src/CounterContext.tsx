@@ -9,7 +9,7 @@ import {
 
 export type CounterContextValue = {
   count: number
-  increment: () => void
+  increment: () => number
 }
 
 const CounterContext = createContext<CounterContextValue | undefined>(undefined)
@@ -21,7 +21,13 @@ export type CounterProviderProps = {
 export const CounterProvider = ({ children }: CounterProviderProps) => {
   const [count, setCount] = useState(0)
 
-  const increment = useCallback(() => setCount((count) => count + 1), [])
+  const increment = useCallback(() => {
+    const newCount = count + 1
+
+    setCount(newCount)
+
+    return newCount
+  }, [count])
 
   const value = useMemo(() => ({ count, increment }), [count, increment])
 

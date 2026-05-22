@@ -14,12 +14,12 @@ export const Counter = () => {
   }
 
   return (
-    <div>
-      Current count {count}{" "}
+    <div className="flex items-center gap-2">
+      <div>Current count {count}</div>
       <button
         type="button"
         onClick={onClick}
-        className="rounded-md bg-gray-100 px-2 py-1 hover:bg-gray-200"
+        className="rounded-md bg-stone-200 px-3 py-1 hover:bg-stone-300"
       >
         +1
       </button>
