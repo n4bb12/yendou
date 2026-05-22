@@ -21,9 +21,7 @@ export type CounterProviderProps = {
 export const CounterProvider = ({ children }: CounterProviderProps) => {
   const [count, setCount] = useState(0)
 
-  const increment = useCallback(() => {
-    setCount((currentCount) => currentCount + 1)
-  }, [])
+  const increment = useCallback(() => setCount((count) => count + 1), [])
 
   const value = useMemo(() => ({ count, increment }), [count, increment])
 
