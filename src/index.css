@@ -1,3 +1,6 @@
+/* Keep Chakra's reset from overriding Tailwind utilities. */
+@layer reset, base, tokens, recipes, utilities;
+
 @import "tailwindcss";
 
 a,
