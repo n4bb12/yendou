@@ -9,7 +9,7 @@ export const Counter = () => {
       <button
         type="button"
         onClick={() => setCount(count + 1)}
-        className="bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-md"
+        className="rounded-md bg-gray-100 px-2 py-1 hover:bg-gray-200"
       >
         +1
       </button>
