@@ -1,21 +1,19 @@
-import { Counter } from "./Counter"
-import { ToastCard } from "./ToastCard"
+import { useEffect } from "react"
+import { Counter } from "./components/counter/Counter"
+import { toaster } from "./components/ui/toaster"
 
 function App() {
-  return (
-    <div className="w-full grid grid-cols-1 gap-12 p-12">
-      <Counter />
+  useEffect(() => {
+    toaster.success({
+      title: "Incremented",
+      description: "Counter is now 3",
+      duration: Number.MAX_SAFE_INTEGER,
+    })
+  }, [])
 
-      <div className="grid gap-2">
-        <div>(for Preview purposes)</div>
-        <ToastCard
-          toast={{
-            title: "Incremented",
-            description: "Counter is now 3",
-            type: "success",
-          }}
-        />
-      </div>
+  return (
+    <div className="grid w-full grid-cols-1 gap-12 p-12">
+      <Counter />
     </div>
   )
 }

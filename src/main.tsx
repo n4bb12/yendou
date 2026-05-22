@@ -1,11 +1,11 @@
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
 import "@fontsource-variable/inter/wght.css"
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
-import { CounterProvider } from "./CounterContext"
-import { Toaster } from "./toaster"
+import { CounterProvider } from "./components/counter/CounterContext.tsx"
+import { Provider } from "./components/ui/provider.tsx"
+import { Toaster } from "./components/ui/toaster.tsx"
 
 const rootElement = document.getElementById("root")
 
@@ -15,11 +15,11 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <ChakraProvider value={defaultSystem}>
+    <Provider>
       <CounterProvider>
         <App />
       </CounterProvider>
       <Toaster />
-    </ChakraProvider>
+    </Provider>
   </StrictMode>,
 )

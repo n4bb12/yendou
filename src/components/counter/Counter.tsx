@@ -1,5 +1,5 @@
+import { toaster } from "../ui/toaster"
 import { useCounter } from "./CounterContext"
-import { toaster } from "./toaster"
 
 export const Counter = () => {
   const { count, increment } = useCounter()
