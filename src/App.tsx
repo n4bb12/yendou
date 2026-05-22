@@ -1,4 +1,4 @@
-import { Counter } from "./assets/Counter"
+import { Counter } from "./Counter"
 
 function App() {
   return <Counter />
