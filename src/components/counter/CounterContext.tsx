@@ -1,11 +1,5 @@
 import type { ReactNode } from "react"
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from "react"
+import { createContext, useCallback, useContext, useMemo, useState } from "react"
 
 export type CounterContextValue = {
   count: number
@@ -31,9 +25,7 @@ export const CounterProvider = ({ children }: CounterProviderProps) => {
 
   const value = useMemo(() => ({ count, increment }), [count, increment])
 
-  return (
-    <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
-  )
+  return <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
 }
 
 export const useCounter = () => {
